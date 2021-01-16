@@ -1,0 +1,52 @@
+{% extends "layout.html.twig" %}
+{% block title %}
+New Reservation
+{% endblock %}
+{% block res_body %}
+<div class="content-body">
+            <div class="container-fluid">
+                <div class="row page-titles mx-0">
+                    <div class="col-sm-6 p-md-0">
+                        <div class="welcome-text">
+                            <h4>Hi, welcome back!</h4>
+                        
+                        </div>
+                    </div>
+                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Plats</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Details</a></li>
+                        </ol>
+                    </div>
+                </div>
+    <h1>Plat</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ repa.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ repa.nom }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ repa.description }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ repa.prix }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('repas_index') }}">back to list</a>
+
+    <a href="{{ path('repas_edit', {'id': repa.id}) }}">edit</a>
+
+    {{ include('repas/_delete_form.html.twig') }}
+    </div>
+    </div>
+{% endblock %}

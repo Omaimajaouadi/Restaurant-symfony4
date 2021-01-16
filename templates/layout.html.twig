@@ -1,0 +1,18 @@
+{% extends "base.html.twig"    %}
+
+{% block tilte%}{{parent()}} -Job {% endblock %}
+{% block titre%}{{parent()|upper}} -Job {% endblock %}
+
+
+{% block body %}
+<div id="menu" >
+
+{{render(controller('App\\controller\\PlatController::menu'))}}
+</div>
+
+
+{% block res_body %}
+<p> vous etes dans la partie Job </p>
+{% endblock %}
+</div>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "layout.html.twig" %}
+{% block title %}
+New Reservation
+{% endblock %}
+{% block res_body %}
+<div class="content-body">
+            <div class="container-fluid">
+                <div class="row page-titles mx-0">
+                    <div class="col-sm-6 p-md-0">
+                        <div class="welcome-text">
+                            <h4>Hi, welcome back!</h4>
+                        
+                        </div>
+                    </div>
+                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)"></a>Plats</li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)"></a>List</li>
+                        </ol>
+                    </div>
+                </div>
+    <h1>Plats</h1>
+  <ul class="header-dropdown">
+                <li><a  href="{{ path('repas_new') }}" class="btn btn-info" role="button">Ajouter</a></li>
+              </ul>
+    
+      <div class="row">
+                  {% for repa in repas %}
+                    <div class="col-lg-12 col-xl-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row m-b-30">
+                                    <div class="col-md-5 col-xxl-12">
+                                        <div class="new-arrival-product mb-4 mb-xxl-4 mb-md-0">
+                                            <div class="new-arrivals-img-contnent">
+                                                <img class="img-fluid" src="{{asset('assets/images/1.jpg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7 col-xxl-12">
+                                        <div class="new-arrival-content position-relative">
+                                            <h4><a href="ecom-product-detail.html" class="text-black">{{repa.nom}}</a></h4>
+                                            <p class="price">{{ repa.prix }}$</p>
+                                            <p>Availability: <span class="item"> In stock <i
+                                                        class="fa fa-check-circle text-success"></i></span></p>
+                                            <p>Plat ID: <span class="item">{{ repa.id }}</span> </p>
+                                            <p>Categorie: <span class="item">Fastfood</span></p>
+                                            <p class="text-content">{{repa.description}}</p>
+                                            <div class="comment-review star-rating text-right">
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star-half-empty"></i></li>
+                                                    <li><i class="fa fa-star-half-empty"></i></li>
+                                                </ul>
+                                                
+                                                <span class="review-text">(34 reviews) / </span><a class="product-review" href="#">Write a review?</a>
+                                             
+                
+                  
+                                            </div>
+                                            <div>
+                                              <a href="{{ path('repas_edit', {'id': repa.id}) }}">
+                                             <button type="button" class="btn btn-warning">Modifier</button>
+                                             </a>
+                                             
+                                               <a href="{{ path('repas_show', {'id': repa.id}) }}">
+                                             <button type="button" class="btn btn-danger">Details</button>
+                                             </a>
+                                         </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+                    {% endfor %}
+                    </div>
+
+
+    <a href="{{ path('repas_new') }}">Create new</a>
+    </div>
+    </div>
+{% endblock %}
